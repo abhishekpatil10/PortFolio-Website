@@ -1,0 +1,373 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.name{
+    display: flex;
+    padding: 1px;
+    padding-top: 5px;
+    font-size:larger;
+    background-color:black;
+}
+.name h1{
+    padding: 10px;
+    
+}
+.name h1 strong{
+    color: crimson;
+}
+/*Styling Links*/
+.nav-links{
+    display: flex;
+    list-style: none; 
+    width: 88vw;
+    padding: 0 0.7vw;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: uppercase;
+}
+.nav-links li a{
+    text-decoration: none;
+    margin: 0 0.7vw;
+}
+.nav-links li a:hover {
+    color: #61DAFB;
+}
+.nav-links li {
+    position: relative;
+}
+.nav-links li a::before {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0%;
+    background-color: #61DAFB;
+    position: absolute;
+    transition: all ease-in-out 250ms;
+    margin: 0 0 0 10%;
+}
+.nav-links li a:hover::before{
+    width: 80%;
+}
+/*Styling Hamburger Icon*/
+.hamburger div{
+    width: 30px;
+    height:3px;
+    background: #f2f5f7;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+.hamburger{
+    display: none;
+}
+
+/*Stying for small screens*/
+@media screen and (max-width: 800px){
+    nav{
+        position: fixed;
+        z-index: 3;
+    }
+    .hamburger{
+        display:block;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+        transition: all 0.7s ease;
+    }
+    .nav-links{
+        position: fixed;
+        background: #131418;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(50px at 90% -20%);
+        -webkit-clip-path: circle(50px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+    .nav-links.open{
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .nav-links li:nth-child(1){
+        transition: all 0.5s ease 0.2s;
+    }
+    .nav-links li:nth-child(2){
+        transition: all 0.5s ease 0.4s;
+    }
+    .nav-links li:nth-child(3){
+        transition: all 0.5s ease 0.6s;
+    }
+    .nav-links li:nth-child(4){
+        transition: all 0.5s ease 0.7s;
+    }
+    .nav-links li:nth-child(5){
+        transition: all 0.5s ease 0.8s;
+    }
+    .nav-links li:nth-child(6){
+        transition: all 0.5s ease 0.9s;
+        margin: 0;
+    }
+    .nav-links li:nth-child(7){
+        transition: all 0.5s ease 1s;
+        margin: 0;
+    }
+    li.fade{
+        opacity: 1;
+    }
+}
+/*Animating Hamburger Icon on Click*/
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    transition: all 0.7s ease;
+    width:0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+.bg{
+    background: url();
+    background-color: cornflowerblue;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 82vh;
+}
+.bg p:first-child{
+    padding-left: 5%;
+    padding-top: 7%;
+    text-align: center;
+    font-size: 50px;
+    display: flex; 
+    animation: mymove 5s infinite;
+    animation-timing-function: linear;   
+}
+
+.bg p{
+    padding-left: 10%;
+    padding-top: 0%;
+    text-align: center;
+    font-size: 50px;
+    display: flex;
+    
+}
+
+.bg3 img{
+    width: 30em;
+    height: 60vh;
+    padding-left: 2em;
+}
+.bg1{
+    background-color: deeppink;
+    height:100vh;
+}
+
+.bg2{
+    background-color :darkmagenta;
+    height: 240vh;
+}
+
+.bg3{
+    background-color:coral;
+    height: 87vh;
+}
+.bg4{
+    background-color: crimson;
+    height: 160vh;
+}
+
+
+
+.social{
+    display: flex;
+    flex-direction: row;
+}
+.cont{
+    text-align: center;
+    width: 20%;
+    margin-left: 10%;
+    height: 30vh;
+    border:2px solid black;
+    background-color:black;
+    border-radius: 15%;
+}
+
+.cont p{
+    padding-top: 5%;
+    font-size:27px ;
+    font-weight: bold;
+    color: white;
+    
+}
+
+.cont i{
+    padding-top:5%;
+    font-weight: 600;
+}
+.cont h6{
+    padding-top: 10%;
+    font-weight:bold;
+    color: white;
+}
+
+.location{
+    padding-top:1%;
+    margin-top: 5%;
+    border: 2px solid black;
+    margin-bottom: 5%;
+    padding-bottom: 1%;
+    width: 30%;
+    margin-left: 35%;
+    height: 44vh;
+    border-radius: 15%;
+    background-color:black;
+}
+
+.location p{
+    text-align: center;
+    color: white;
+
+    font-size: 27px;
+}
+
+.serv{
+    display: flex;
+    margin-left: 5%;
+    
+}
+
+.secim{
+    margin-top: -25%;
+    float: right;
+    margin-left: 50%;
+}
+
+.hmim{
+    float: right;
+    margin-top: -25%;
+    margin-right: 10%;
+    width: 25%;
+    height: 60vh;
+}
+
+@media  only screen and (max-width: 500px){
+    .bg{
+        display: flex;
+        flex-direction: column;
+        height: 85vh;
+    }
+    .bg img {
+        margin: 20px 5em 20px 60px;
+        height: 20em;
+        width: 15em;
+
+    }
+    .bg button strong{
+        color : crimson;
+        font-size: 18px;
+    } 
+    .name h1{
+        font-size: x-large;
+        margin-left: .5em;
+    }
+    .nav-links{
+        margin-left: -20em;
+        padding-left: -1em;
+        z-index: 1;
+        padding-bottom: 5em;
+    }
+    .bg p{
+        font-size: 28px;
+        margin-bottom: .4em;
+    }
+    .animate__animated .animate__bounce p{
+        font-size: 24px;
+    }
+
+    .bg4{
+        height: 185vh;
+    }
+ .bg4 .social {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+ }   
+ .bg4 .social .cont{
+     height: 30vh;
+     margin:1em 6em;
+     padding: 10px;
+    width: 50%;
+ }
+ .bg4 .location{
+     width: 60%;
+     margin-left:5em;
+ }
+ .bg4 .social .cont{
+     padding: 2em;
+ }
+ .conte {
+     display: none;
+ }
+ .bg4 h2{
+     display: none;
+ }
+ .bg2{
+     height: 110vh;
+ }
+ .bg2 .card{
+     display: flex;
+     flex-direction: column;
+ }
+ .bg2 .card img{
+     width: 100%;
+ }
+ .bg2 .card p{
+     display: none;
+ }
+
+ .bg3{
+     display: flex;
+     flex-direction: column;
+     margin-left: -10em;
+ }
+ }
+ .bg3 h1{
+     margin-left: 4em;
+ }
+ .bg3 img{
+    margin-left: 11em;
+     height:50vh;
+     width: 20em;
+ }
+ .bg3 .dis p{
+     padding: 8em 0;
+ }
+
+ .bg1{
+     height: 245vh;
+ }
+ .bg1 .card {
+     display:flex;
+     margin-left: -5em;
+     flex-direction: column;
+ }
+ .bg1 .card img {
+     padding: 2em;
+     width: 100%;
+     height: 70vh;
+     margin-left:0em;
+     margin-right: 3em;
+ }
+}
+
